@@ -13,9 +13,10 @@ export class AuthenticationService {
 
     // login
     login(username: string, password:string){
-        return this.http.post(`${config.apiUrl}/users/authenticate`, {username,password})
+        return this.http.post<any>(`${config.apiUrl}/users/authenticate`, {username,password})
         .pipe(
             // the backend service sends an instance of the user
+            // user: any (because .post<any>)
             map(user => {
                 // login successful if the response has jwt token
                 if(user && user.token){
