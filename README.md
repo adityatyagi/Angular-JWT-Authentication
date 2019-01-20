@@ -1,6 +1,6 @@
 # Authentication using JWT in Angular
 
-A detailed (well commented) project explaining Authentication using JavaScript Web Tokens (JWT) and Webpack. The project is developed in Angular 6.
+A detailed (well commented) project explaining Authentication using JSON Web Tokens (JWT) and Webpack. The project is developed in Angular 6.
 
 ## Getting Started
 
