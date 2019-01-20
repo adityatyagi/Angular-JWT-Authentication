@@ -1,0 +1,34 @@
+<!--Credentials-->
+<div class="alert alert-info">
+    Username: test
+    <br>
+    Password: test
+</div>
+
+<div class="login">
+    <h2 class="text-center">Login</h2>
+    <form [formGroup]="loginFrom" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" formControlName="username" [ngClass]="{'is-invalid': submitted && f.username.errors}">
+            <!--Validation errors - will show only when the form is submitteed-->
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                Username is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" fromControlname="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+             <!--Validation errors - will show only when the form is submitteed-->
+             <div *ngIf="submitted & f.password.errors" class="invalid-feedback">
+                 Password is required
+             </div>
+
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn-btn-primary">Login</button>
+            <img *ngIf="loading" src="https://www.freeiconspng.com/uploads/spinner-icon-25.gif" alt="Loading Image">
+        </div>
+        <div *ngIf="error" class="alert alert-danger">Error</div>
+    </form>
+</div>
